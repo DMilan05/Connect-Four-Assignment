@@ -11,6 +11,18 @@ public class Move extends GameBoard{
         super(columns, rows);
     }
 
+    public Disk getCell(int x, int y) {
+        assert(x >= 0 && x < this.getColumns().size());
+        assert(y >= 0 && y < getRows());
+
+        List<Disk> column = this.getColumns().get(x);
+
+        if (column.size() > y) {
+            return column.get(y);
+        } else {
+            return null;
+        }
+    }
     public void move(int x, Disk player) {
         assert(x >= 0 && x < getColumns().toArray().length);
 
@@ -22,4 +34,6 @@ public class Move extends GameBoard{
 
         column.add(player);
     }
+
+
 }
