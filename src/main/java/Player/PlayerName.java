@@ -1,6 +1,6 @@
 package Player;
 
-import com.sun.tools.jdeprscan.scan.Scan;
+//import com.sun.tools.jdeprscan.scan.Scan;
 
 import java.util.Scanner;
 
