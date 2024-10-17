@@ -1,5 +1,6 @@
 package Board;
 
+import javax.crypto.spec.PSource;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
@@ -15,6 +16,8 @@ public class GameBoard {
         this.rows = rows;
     }
 
+
+
     public List<List<Disk>> getColumns() {
         return columns;
     }
@@ -22,4 +25,6 @@ public class GameBoard {
     public int getRows() {
         return rows;
     }
+
+
 }

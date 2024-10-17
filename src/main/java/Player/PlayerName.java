@@ -1,14 +1,14 @@
 package Player;
 
-//import com.sun.tools.jdeprscan.scan.Scan;
-
 import java.util.Scanner;
 
 public class PlayerName {
-    public String playerName;
+    private String playerName;
+    private InputProvider inputProvider;
 
-    public PlayerName(String playerName) {
+    public PlayerName(String playerName, InputProvider inputProvider) {
         this.playerName = playerName;
+        this.inputProvider = inputProvider;
     }
 
     public String getPlayerName() {
@@ -20,8 +20,7 @@ public class PlayerName {
     }
 
     public void askForPlayerName() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("PLease write your name here: ");
-        setPlayerName(scanner.nextLine());
+        System.out.print("Please write your name here: ");
+        setPlayerName(inputProvider.getInput());
     }
 }

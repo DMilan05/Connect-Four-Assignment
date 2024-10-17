@@ -9,6 +9,8 @@ public class GameBoardGenerator extends GameBoard{
         super(columns, rows);
     }
 
+
+
     public void generateBoard() {
         this.getColumns().add(new ArrayList<>());
     }
