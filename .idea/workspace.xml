@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5d4d89a-39db-4f27-91d7-220dc988cb99" name="Changes" comment="Some tests are created." />
+    <list default="true" id="e5d4d89a-39db-4f27-91d7-220dc988cb99" name="Changes" comment="Some tests are created.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,7 +69,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "assignment",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Java programok/Progtech/connectFourAlphaVersion",
     "settings.editor.selected.configurable": "Errors"
@@ -170,7 +172,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729180037813</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Some tests are created.">
+      <option name="closed" value="true" />
+      <created>1729180113124</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1729180113124</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
