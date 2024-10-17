@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5d4d89a-39db-4f27-91d7-220dc988cb99" name="Changes" comment="Some tests are created.">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Board/BoardWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ComputerPlayer/ComputerMove.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sun_checks.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Board/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Board/GameBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Board/GameBoardGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Board/GameBoardGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Player/PlayerName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player/PlayerName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/nye/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/nye/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Board/GameBoardGeneratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Board/GameBoardGeneratorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Board/GameBoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Board/GameBoardTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Game/MoveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Game/MoveTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Player/PlayerNameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Player/PlayerNameTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/hu/nye/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hu/nye/MainTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="e5d4d89a-39db-4f27-91d7-220dc988cb99" name="Changes" comment="Some tests are created." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,6 +21,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -173,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729096616450</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Some tests are created.">
+      <option name="closed" value="true" />
+      <created>1729180037813</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1729180037813</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
