@@ -1,2 +1,1 @@
-Mivel a javító tanárhoz szólok, így magyarul írom: Bármit próbáltam, valamiért klónozáskor a projekt az osztályokat nem hozza létre. Mivel Vályi tanár úr azt mondta, hogy lehet alkalmazni a ChatGPT-t, 
-így (az osztályokban jelölt módon) a tesztekhez, mockoláshoz és egy-két számomra kissé gondot okozó résznél alkalmaztam. A legtöbb dolgot azonban igyekeztem magamtól, esetleg Googlet használva megoldani. 
+
