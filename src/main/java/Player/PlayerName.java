@@ -3,6 +3,7 @@ package Player;
 import java.util.Scanner;
 
 public class PlayerName {
+    //For this class, I used ChatGPT, because it suggested me the use of InputProvider.
     private String playerName;
     private InputProvider inputProvider;
 
@@ -23,4 +24,5 @@ public class PlayerName {
         System.out.print("Please write your name here: ");
         setPlayerName(inputProvider.getInput());
     }
+
 }

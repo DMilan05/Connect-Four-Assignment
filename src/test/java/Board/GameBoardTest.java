@@ -20,6 +20,7 @@ public class GameBoardTest extends TestCase {
     @BeforeEach
     public void setUp() {
         // Create an empty list of columns and initialize rows to 6 (for example)
+        //For this class, I used ChatGPT. If the IntelliJ alerted me about problems, I tried to solve them.
         List<List<Disk>> columns = new ArrayList<>();
         int rows = 6;
         gameBoard = new GameBoard(columns, rows);
