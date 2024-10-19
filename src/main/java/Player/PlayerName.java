@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class PlayerName {
     //For this class, I used ChatGPT, because it suggested me the use of InputProvider.
-    private String playerName;
+    private final String playerName;
     private InputProvider inputProvider;
 
     public PlayerName(String playerName, InputProvider inputProvider) {
@@ -17,13 +17,13 @@ public class PlayerName {
         return playerName;
     }
 
-    public void setPlayerName(String playerName) {
-        this.playerName = playerName;
-    }
 
-    public void askForPlayerName() {
+    //For immutability, I used ChatGPT, because it wasn't clear for me what it is and what it is good for.
+    //Now I know that it is used when we want something to be final and can not be changed.
+    public PlayerName askForPlayerName() {
         System.out.print("Please write your name here: ");
-        setPlayerName(inputProvider.getInput());
+        String newName = inputProvider.getInput();
+        return new PlayerName(newName, inputProvider);
     }
 
     @Override

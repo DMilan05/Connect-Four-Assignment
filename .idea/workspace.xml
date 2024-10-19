@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5d4d89a-39db-4f27-91d7-220dc988cb99" name="Changes" comment="Some tests are created.">
+    <list default="true" id="e5d4d89a-39db-4f27-91d7-220dc988cb99" name="Changes" comment="Overriding and some changes have been done.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Board/BoardWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Board/BoardWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Board/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Board/GameBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/Move.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Player/PlayerName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player/PlayerName.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +33,9 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$USER_HOME$/.jdks/openjdk-21.0.2/lib/src.zip!/java.base/java/util/Scanner.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -208,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729183010998</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Overriding and some changes have been done.">
+      <option name="closed" value="true" />
+      <created>1729337909495</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1729337909495</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -226,6 +234,7 @@
     <MESSAGE value="The assignment is starting to get together..." />
     <MESSAGE value="Starting to look like how I want it (I hope)" />
     <MESSAGE value="Some tests are created." />
-    <option name="LAST_COMMIT_MESSAGE" value="Some tests are created." />
+    <MESSAGE value="Overriding and some changes have been done." />
+    <option name="LAST_COMMIT_MESSAGE" value="Overriding and some changes have been done." />
   </component>
 </project>
