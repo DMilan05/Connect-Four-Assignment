@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5d4d89a-39db-4f27-91d7-220dc988cb99" name="Changes" comment="Some tests are created." />
+    <list default="true" id="e5d4d89a-39db-4f27-91d7-220dc988cb99" name="Changes" comment="Some tests are created.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Board/BoardWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Board/BoardWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Board/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Board/GameBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Game/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game/Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Player/PlayerName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player/PlayerName.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,36 +49,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "Maven.connectFourAlphaVersion [clean].executor": "Run",
-    "Maven.connectFourAlphaVersion [compile].executor": "Run",
-    "Maven.connectFourAlphaVersion [install].executor": "Run",
-    "Maven.connectFourAlphaVersion [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
-    "Maven.connectFourAlphaVersion [org.apache.maven.plugins:maven-install-plugin:3.1.1:help].executor": "Run",
-    "Maven.connectFourAlphaVersion [org.apache.maven.plugins:maven-jar-plugin:3.3.0:jar].executor": "Run",
-    "Maven.connectFourAlphaVersion [org.jacoco:jacoco-maven-plugin:0.8.12:check].executor": "Run",
-    "Maven.connectFourAlphaVersion [org.jacoco:jacoco-maven-plugin:0.8.12:prepare-agent-integration].executor": "Run",
-    "Maven.connectFourAlphaVersion [org.jacoco:jacoco-maven-plugin:0.8.12:prepare-agent].executor": "Run",
-    "Maven.connectFourAlphaVersion [package].executor": "Run",
-    "Maven.connectFourAlphaVersion [test].executor": "Run",
-    "Maven.connectFourAlphaVersion [validate].executor": "Run",
-    "Maven.connectFourAlphaVersion [verify].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers": "true",
-    "git-widget-placeholder": "assignment",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Java programok/Progtech/connectFourAlphaVersion",
-    "settings.editor.selected.configurable": "Errors"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.connectFourAlphaVersion [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.connectFourAlphaVersion [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.connectFourAlphaVersion [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.connectFourAlphaVersion [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.connectFourAlphaVersion [org.apache.maven.plugins:maven-install-plugin:3.1.1:help].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.connectFourAlphaVersion [org.apache.maven.plugins:maven-jar-plugin:3.3.0:jar].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.connectFourAlphaVersion [org.jacoco:jacoco-maven-plugin:0.8.12:check].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.connectFourAlphaVersion [org.jacoco:jacoco-maven-plugin:0.8.12:prepare-agent-integration].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.connectFourAlphaVersion [org.jacoco:jacoco-maven-plugin:0.8.12:prepare-agent].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.connectFourAlphaVersion [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.connectFourAlphaVersion [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.connectFourAlphaVersion [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.connectFourAlphaVersion [verify].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3&quot;: &quot;junit.framework.TestCase&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;assignment&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/OneDrive/Asztali gép/NYE/3. félév/Progtech/megegyteszteles&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Player" />
@@ -194,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729182876579</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Some tests are created.">
+      <option name="closed" value="true" />
+      <created>1729183010998</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1729183010998</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -6,14 +6,14 @@ import Board.GameBoard;
 import java.util.List;
 
 public class Move extends GameBoard{
-    GameBoard gameBoard = new GameBoard(this.getColumns(),this.getRows());
+
     public Move(List<List<Disk>> columns, int rows) {
         super(columns, rows);
     }
 
     public Disk getCell(int x, int y) {
-        assert(x >= 0 && x < this.getColumns().size());
-        assert(y >= 0 && y < getRows());
+        assert(x >= 0 && x < this.getColumns().size()): "Invalid column index: " + x;
+        assert(y >= 0 && y < getRows()): "Invalid row index: " + y;
 
         List<Disk> column = this.getColumns().get(x);
 
@@ -24,7 +24,7 @@ public class Move extends GameBoard{
         }
     }
     public void move(int x, Disk player) {
-        assert(x >= 0 && x < getColumns().toArray().length);
+        assert(x >= 0 && x < getColumns().toArray().length) : "Invalid column index: " + x;;
 
         List<Disk> column = getColumns().get(x);
         if (column.size() >= this.getRows()) {
@@ -33,6 +33,18 @@ public class Move extends GameBoard{
 
 
         column.add(player);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (List<Disk> column : this.getColumns()) {
+            for (Disk disk : column) {
+                sb.append(disk.toString()).append(" ");
+            }
+            sb.append("\n");
+        }
+        return sb.toString();
     }
 
 

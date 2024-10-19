@@ -19,7 +19,7 @@ public class GameBoard {
 
 
     public List<List<Disk>> getColumns() {
-        return columns;
+        return new ArrayList<>(columns);
     }
 
     public int getRows() {
