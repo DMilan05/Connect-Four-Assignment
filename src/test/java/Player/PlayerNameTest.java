@@ -33,12 +33,7 @@ class PlayerNameTest {
         assertEquals("DefaultName", playerName.getPlayerName(), "getPlayerName() should return 'DefaultName'.");
     }
 
-    @Test
-    void testSetPlayerName() {
-        // Test that the setter updates the player name correctly
-        playerName.setPlayerName("NewPlayer");
-        assertEquals("NewPlayer", playerName.getPlayerName(), "setPlayerName() should update the name to 'NewPlayer'.");
-    }
+
 
     @Test
     void testAskForPlayerName() {

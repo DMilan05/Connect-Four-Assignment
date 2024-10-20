@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e5d4d89a-39db-4f27-91d7-220dc988cb99" name="Changes" comment="Overriding and some changes have been done.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ComputerPlayer/ComputerMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ComputerPlayer/ComputerMove.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Player/PlayerName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player/PlayerName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/nye/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/nye/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Board/GameBoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Board/GameBoardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Player/PlayerNameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Player/PlayerNameTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +228,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729338464367</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Overriding and some changes have been done.">
+      <option name="closed" value="true" />
+      <created>1729339405942</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1729339405942</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

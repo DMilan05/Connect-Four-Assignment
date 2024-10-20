@@ -1,6 +1,7 @@
 package hu.nye;
 
 import Board.GameBoard;
+import Player.PlayerName;
 
 public class Main
 {
