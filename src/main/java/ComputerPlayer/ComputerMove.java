@@ -18,7 +18,7 @@ public class ComputerMove extends GameBoard {
    public void putADisk() {
        Random random = new Random();
 
-       // Generate a random number between 1 and 7
+
        this.random = random.nextInt(this.getColumns().size()) + 1;
    }
     public Disk getCell(int x, int y) {
