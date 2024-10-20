@@ -15,10 +15,8 @@ public class ComputerMove extends GameBoard {
         super(columns, rows);
     }
 
-   public void putADisk() {
+   public void randomColumn() {
        Random random = new Random();
-
-
        this.random = random.nextInt(this.getColumns().size()) + 1;
    }
     public Disk getCell(int x, int y) {
