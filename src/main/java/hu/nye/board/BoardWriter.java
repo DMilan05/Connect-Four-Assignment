@@ -1,11 +1,15 @@
-package Board;
+package hu.nye.board;
+
+import hu.nye.model.Board;
+import hu.nye.model.Disk;
 
 import java.util.List;
 
-public class BoardWriter extends GameBoardGenerator{
+public class BoardWriter {
+    private final Board board;
 
-    public BoardWriter(List<List<Disk>> columns, int rows) {
-        super(columns, rows);
+    public BoardWriter(Board board) {
+        this.board = board;
     }
 
     public void writeOut() {
@@ -17,7 +21,7 @@ public class BoardWriter extends GameBoardGenerator{
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        for (List<Disk> column : this.getColumns()) {
+        for (List<Disk> column : board.getColumns()) {
             for (Disk disk : column) {
                 sb.append(disk.toString()).append(" ");
             }
@@ -25,5 +29,7 @@ public class BoardWriter extends GameBoardGenerator{
         }
         return sb.toString();
     }
+
+
 
 }

@@ -5,7 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5d4d89a-39db-4f27-91d7-220dc988cb99" name="Changes" comment="Overriding and some changes have been done.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/hu/nye/board/GameBoardGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hu/nye/game/Move.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Board/BoardWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/nye/board/BoardWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Board/Disk.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Board/GameBoard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Board/GameBoardGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ComputerPlayer/ComputerMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/nye/computer/player/ComputerMove.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Game/Move.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Player/InputProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/nye/player/InputProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Player/PlayerName.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/nye/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/nye/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Board/GameBoardGeneratorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Board/GameBoardTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Game/ComputerMoveTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Game/MoveTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Player/PlayerNameTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/hu/nye/MainTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +35,8 @@
       <list>
         <option value="Enum" />
         <option value="JUnit3 Test Class" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -48,36 +66,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.connectFourAlphaVersion [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.connectFourAlphaVersion [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.connectFourAlphaVersion [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.connectFourAlphaVersion [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.connectFourAlphaVersion [org.apache.maven.plugins:maven-install-plugin:3.1.1:help].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.connectFourAlphaVersion [org.apache.maven.plugins:maven-jar-plugin:3.3.0:jar].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.connectFourAlphaVersion [org.jacoco:jacoco-maven-plugin:0.8.12:check].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.connectFourAlphaVersion [org.jacoco:jacoco-maven-plugin:0.8.12:prepare-agent-integration].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.connectFourAlphaVersion [org.jacoco:jacoco-maven-plugin:0.8.12:prepare-agent].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.connectFourAlphaVersion [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.connectFourAlphaVersion [test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.connectFourAlphaVersion [validate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.connectFourAlphaVersion [verify].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3&quot;: &quot;junit.framework.TestCase&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;assignment&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/OneDrive/Asztali gép/NYE/3. félév/Progtech/megegyteszteles&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "JUnit.GameBoardGeneratorTest.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.connectFourAlphaVersion [clean].executor": "Run",
+    "Maven.connectFourAlphaVersion [compile].executor": "Run",
+    "Maven.connectFourAlphaVersion [install].executor": "Run",
+    "Maven.connectFourAlphaVersion [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
+    "Maven.connectFourAlphaVersion [org.apache.maven.plugins:maven-install-plugin:3.1.1:help].executor": "Run",
+    "Maven.connectFourAlphaVersion [org.apache.maven.plugins:maven-jar-plugin:3.3.0:jar].executor": "Run",
+    "Maven.connectFourAlphaVersion [org.jacoco:jacoco-maven-plugin:0.8.12:check].executor": "Run",
+    "Maven.connectFourAlphaVersion [org.jacoco:jacoco-maven-plugin:0.8.12:dump].executor": "Run",
+    "Maven.connectFourAlphaVersion [org.jacoco:jacoco-maven-plugin:0.8.12:prepare-agent-integration].executor": "Run",
+    "Maven.connectFourAlphaVersion [org.jacoco:jacoco-maven-plugin:0.8.12:prepare-agent].executor": "Run",
+    "Maven.connectFourAlphaVersion [org.jacoco:jacoco-maven-plugin:0.8.12:report].executor": "Run",
+    "Maven.connectFourAlphaVersion [package].executor": "Run",
+    "Maven.connectFourAlphaVersion [test].executor": "Run",
+    "Maven.connectFourAlphaVersion [validate].executor": "Run",
+    "Maven.connectFourAlphaVersion [verify].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers": "true",
+    "git-widget-placeholder": "assignment",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Java programok/Progtech/connectFourAlphaVersion",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.importing"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Player" />
@@ -90,17 +114,37 @@
       <recent name="Player" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="Player" />
-      <recent name="Board" />
-      <recent name="Game" />
+      <recent name="hu.nye.computer.player" />
+      <recent name="player" />
+      <recent name="hu.nye.model" />
+      <recent name="hu.nye.game" />
+      <recent name="hu.nye.board" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="model" />
     </key>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
-      </set>
-    </attachedChunks>
+  <component name="RunManager">
+    <configuration name="GameBoardGeneratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="connectFourAlphaVersion" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="board.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Board" />
+      <option name="MAIN_CLASS_NAME" value="Board.GameBoardGeneratorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.GameBoardGeneratorTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -255,7 +299,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729439951320</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Overriding and some changes have been done.">
+      <option name="closed" value="true" />
+      <created>1729440423936</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1729440423936</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -275,5 +327,10 @@
     <MESSAGE value="Some tests are created." />
     <MESSAGE value="Overriding and some changes have been done." />
     <option name="LAST_COMMIT_MESSAGE" value="Overriding and some changes have been done." />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/connectFourAlphaVersion$GameBoardGeneratorTest.ic" NAME="GameBoardGeneratorTest Coverage Results" MODIFIED="1729490273394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Board.*</FILTER>
+    </SUITE>
   </component>
 </project>
