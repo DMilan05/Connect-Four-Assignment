@@ -8,16 +8,6 @@ import java.util.List;
 
 public class Move{
     private final Board board;
-    //paraméterként adjuk be az adott metódusoknak, amelyek használják (ne örököltessük a GameBoardból, mivel
-    //ezek servicek, ne terjesszék ki (Move GameBoard-e? -> igen -> lehet)
-
-    //GameBoardGenerator -> service
-    //Move - VO
-
-    //Move ValueObject: mi a valid lépés, serviceként implementáljam
-    //minél kevesebb adat átadása paraméterként
-    //ha valami csak rowt használ, ne adjam át az egész objektumot, csak az instance rowját
-
     public Move(Board board) {
         this.board = board;
     }
@@ -59,6 +49,14 @@ public class Move{
         }
         return sb.toString();
     }
+    //Nem a dokumentáció/kód részét képzik a következő sorok. Csak tanácsok az oktatótól.
+    //paraméterként adjuk be az adott metódusoknak, amelyek használják (ne örököltessük a GameBoardból, mivel
+    //ezek servicek, ne terjesszék ki (Move GameBoard-e? -> igen -> lehet)
 
+    //GameBoardGenerator -> service
+    //Move - VO
 
+    //Move ValueObject: mi a valid lépés, serviceként implementáljam
+    //minél kevesebb adat átadása paraméterként
+    //ha valami csak rowt használ, ne adjam át az egész objektumot, csak az instance rowját
 }

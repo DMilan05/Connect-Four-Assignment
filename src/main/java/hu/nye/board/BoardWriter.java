@@ -29,7 +29,4 @@ public class BoardWriter {
         }
         return sb.toString();
     }
-
-
-
 }
