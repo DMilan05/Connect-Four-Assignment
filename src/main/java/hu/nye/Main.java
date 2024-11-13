@@ -28,13 +28,17 @@ public class Main {
         // Initialize players
         InputProvider inputProvider = new ConsoleInputProvider();
         PlayerName humanPlayer = new PlayerName("Human", inputProvider);
+        humanPlayer.askForPlayerName();
+        String player = humanPlayer.getPlayerName();
+
+
         ComputerMove computerPlayer = new ComputerMove(board);
         Move moveService = new Move(board);
 
         boolean gameOn = true;
         Disk currentPlayerDisk = Disk.YELLOW;  // Human player starts with YELLOW
 
-        System.out.println("Welcome to Connect 4!");
+        System.out.println("Welcome to Connect 4, "+player+"!");
         boardWriter.writeOut();
 
         while (gameOn) {

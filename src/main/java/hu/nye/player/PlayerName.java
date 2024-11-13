@@ -15,9 +15,7 @@ public class PlayerName {
 
 
 
-    public String getPlayerName() {
-        return playerName;
-    }
+
 
 
     //For immutability, I used ChatGPT, because it wasn't clear for me what it is and what it is good for.
@@ -27,7 +25,9 @@ public class PlayerName {
         String newName = inputProvider.getInput();
         return new PlayerName(newName, inputProvider);
     }
-
+    public String getPlayerName() {
+        return playerName;
+    }
     @Override
     public String toString() {
         return "Player Name: " + playerName;
