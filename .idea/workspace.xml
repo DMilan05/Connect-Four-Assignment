@@ -6,8 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="e5d4d89a-39db-4f27-91d7-220dc988cb99" name="Changes" comment="Overriding and some changes have been done.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hu/nye/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/nye/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/nye/player/PlayerName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/nye/player/PlayerName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/nye/board/BoardWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/nye/board/BoardWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/nye/board/GameBoardGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/nye/board/GameBoardGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/nye/computer/player/ComputerMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/nye/computer/player/ComputerMove.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/nye/game/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/nye/game/Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/nye/model/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/nye/model/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/nye/winning/conditions/CheckWin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/nye/winning/conditions/CheckWin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/hu/nye/computer/player/ComputerMoveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hu/nye/computer/player/ComputerMoveTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/hu/nye/game/MoveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hu/nye/game/MoveTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/hu/nye/model/BoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hu/nye/model/BoardTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +72,8 @@
     &quot;Maven.connectFourAlphaVersion [org.apache.maven.plugins:maven-jar-plugin:3.3.0:jar].executor&quot;: &quot;Run&quot;,
     &quot;Maven.connectFourAlphaVersion [org.jacoco:jacoco-maven-plugin:0.8.12:check].executor&quot;: &quot;Run&quot;,
     &quot;Maven.connectFourAlphaVersion [org.jacoco:jacoco-maven-plugin:0.8.12:dump].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.connectFourAlphaVersion [org.jacoco:jacoco-maven-plugin:0.8.12:instrument].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.connectFourAlphaVersion [org.jacoco:jacoco-maven-plugin:0.8.12:merge].executor&quot;: &quot;Run&quot;,
     &quot;Maven.connectFourAlphaVersion [org.jacoco:jacoco-maven-plugin:0.8.12:prepare-agent-integration].executor&quot;: &quot;Run&quot;,
     &quot;Maven.connectFourAlphaVersion [org.jacoco:jacoco-maven-plugin:0.8.12:prepare-agent].executor&quot;: &quot;Run&quot;,
     &quot;Maven.connectFourAlphaVersion [org.jacoco:jacoco-maven-plugin:0.8.12:report].executor&quot;: &quot;Run&quot;,
@@ -334,7 +345,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731527441039</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Overriding and some changes have been done.">
+      <option name="closed" value="true" />
+      <created>1731528265935</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1731528265935</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

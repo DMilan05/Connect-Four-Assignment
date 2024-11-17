@@ -1,12 +1,13 @@
 package hu.nye.computer.player;
 
-import hu.nye.computer.player.ComputerMove;
 import hu.nye.model.Board;
 import hu.nye.model.Disk;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
@@ -92,7 +93,7 @@ class ComputerMoveTest {
         }
         Disk playerDisk = Disk.YELLOW;
 
-        // When & Then: An IllegalArgumentException should be thrown when trying to place a disk
+        // When & Then: An IllegalArgumentException should be thrown when trying to place a disk in a full column
         assertThrows(IllegalArgumentException.class, () -> computerMove.makeMove(playerDisk));
     }
 

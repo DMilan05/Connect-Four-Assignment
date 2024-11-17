@@ -24,18 +24,32 @@ public class Move{
             return null;
         }
     }
-    public void move(int x, Disk player) {
-        assert(x >= 0 && x < board.getColumns().toArray().length) : "Invalid column index: " + x;;
 
-        List<Disk> column = board.getColumns().get(x);
-        if (column.size() >= board.getRows()) {
-            throw new IllegalArgumentException("That column is full");
+    public void move(int x, Disk player) {
+        // Validate the column index
+        if (x < 0 || x >= board.getColumns().size()) {
+            throw new IllegalArgumentException("Invalid column index.");
         }
 
+        List<Disk> column = board.getColumns().get(x);
 
-        column.add(player);
-        //return CheckWin.checkWin(x, column.size() - 1, player);
+        // Check if the column is full
+        if (!column.contains(Disk.EMPTY)) {
+            throw new IllegalArgumentException("That column is full.");
+        }
+
+        // Place the disk in the lowest available slot
+        for (int i = column.size() - 1; i >= 0; i--) {
+            if (column.get(i) == Disk.EMPTY) {
+                column.set(i, player); // Replace EMPTY with the player's disk
+                break;
+            }
+        }
     }
+
+
+
+
 
 
     @Override

@@ -25,9 +25,16 @@ public class ComputerMove {
         int column;
         do {
             column = random.nextInt(board.getColumns().size());
-        } while (board.getColumns().get(column).size() >= board.getRows());
-        return column;
+            List<Disk> columnDisks = board.getColumns().get(column);
+
+            // Check if the column has any empty slots
+            boolean hasEmpty = columnDisks.stream().anyMatch(disk -> disk == Disk.EMPTY);
+            if (hasEmpty) {
+                return column;
+            }
+        } while (true);
     }
+
 
     /**
      * Retrieves the disk at the specified location on the board.
@@ -50,15 +57,17 @@ public class ComputerMove {
      * @param player the disk to place in the chosen column
      */
     public void makeMove(Disk player) {
-        int columnIndex = getRandomAvailableColumn();
-        List<Disk> column = board.getColumns().get(columnIndex);
+        int column = getRandomAvailableColumn();
 
-        if (column.size() >= board.getRows()) {
-            throw new IllegalArgumentException("Selected column is full");
+        List<Disk> columnDisks = board.getColumns().get(column);
+        for (int i = columnDisks.size() - 1; i >= 0; i--) {
+            if (columnDisks.get(i) == Disk.EMPTY) {
+                columnDisks.set(i, player); // Replace Disk.EMPTY with the computer's disk
+                return;
+            }
         }
-
-        column.add(player);
     }
+
 
     @Override
     public String toString() {

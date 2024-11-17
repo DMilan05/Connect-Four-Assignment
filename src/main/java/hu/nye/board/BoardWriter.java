@@ -13,6 +13,7 @@ public class BoardWriter {
     }
 
     public void writeOut() {
+        // Print the board state after every move
         System.out.println(this.toString());
     }
 
@@ -21,12 +22,30 @@ public class BoardWriter {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        for (List<Disk> column : board.getColumns()) {
-            for (Disk disk : column) {
-                sb.append(disk.toString()).append(" ");
-            }
-            sb.append("\n");
+        int numRows = board.getColumns().get(0).size(); // Number of rows
+        int numCols = board.getColumns().size();       // Number of columns
+
+        // Build a larger divider line
+        StringBuilder rowDivider = new StringBuilder();
+        for (int i = 0; i < numCols; i++) {
+            rowDivider.append("+----------");
         }
+        rowDivider.append("+\n"); // Add the final '+'
+
+        for (int row = 0; row < numRows; row++) {
+            sb.append(rowDivider); // Add the divider line before each row
+            for (int col = 0; col < numCols; col++) {
+                sb.append("|  ").append(String.format("%-8s", board.getColumns().get(col).get(row)));
+            }
+            sb.append("|\n"); // Close the row with a vertical bar
+        }
+        sb.append(rowDivider); // Add the final divider line at the bottom
+
         return sb.toString();
     }
+
+
+
+
+
 }

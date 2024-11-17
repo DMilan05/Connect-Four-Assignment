@@ -11,52 +11,63 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 class MoveTest {
 
     private Board boardMock;
     private Move move;
+    private List<List<Disk>> columns;
 
     @BeforeEach
     void setUp() {
-        // Given a mock Board with columns and rows
-        boardMock = Mockito.mock(Board.class);
-        List<List<Disk>> columns = new ArrayList<>(Arrays.asList(
+        // Given a mock Board with predefined columns and rows
+        columns = new ArrayList<>(Arrays.asList(
                 new ArrayList<>(Arrays.asList(Disk.EMPTY, Disk.EMPTY)), // Column 0
                 new ArrayList<>(Arrays.asList(Disk.RED, Disk.EMPTY))     // Column 1
         ));
 
-        Mockito.when(boardMock.getColumns()).thenReturn(columns);
-        Mockito.when(boardMock.getRows()).thenReturn(2);
+        boardMock = Mockito.mock(Board.class);
+
+        // Mock the getColumns and getRows methods
+        when(boardMock.getColumns()).thenAnswer(invocation -> {
+            List<List<Disk>> columnsCopy = new ArrayList<>();
+            for (List<Disk> column : columns) {
+                columnsCopy.add(new ArrayList<>(column));
+            }
+            return columnsCopy;
+        });
+
+        when(boardMock.getRows()).thenReturn(2);
 
         move = new Move(boardMock);
     }
 
     @Test
     void testGetCell_shouldReturnCorrectDisk() {
-        // Given a mock board with a RED disk in position (1, 0)
+        // Given a board with a RED disk in position (1, 0)
 
         // When getCell is called for position (1, 0)
         Disk result = move.getCell(1, 0);
 
         // Then the result should be RED
-        assertEquals(Disk.RED, result);
+        assertEquals(Disk.RED, result, "Expected to find RED disk at position (1, 0)");
     }
 
     @Test
     void testGetCell_shouldReturnNullForOutOfBounds() {
-        // Given a board with defined rows and columns
+        // Given a board with a defined number of rows and columns
 
-        // When getCell is called for a position outside of valid bounds
+        // When getCell is called for an out-of-bounds position
         Disk result = move.getCell(0, 2);
 
         // Then the result should be null
-        assertNull(result, "Should return null for out-of-bounds cell");
+        assertNull(result, "Expected null for out-of-bounds cell");
     }
 
     @Test
     void testMove_shouldAddDiskToSpecifiedColumn() {
-        // Given an empty position in column 0
+        // Given an empty position in column 0 and a YELLOW disk to be added
         int column = 0;
         Disk playerDisk = Disk.YELLOW;
 
@@ -64,8 +75,9 @@ class MoveTest {
         move.move(column, playerDisk);
 
         // Then the last position in column 0 should be YELLOW
-        List<Disk> columnDisks = boardMock.getColumns().get(column);
-        assertEquals(playerDisk, columnDisks.get(columnDisks.size() - 1));
+        List<List<Disk>> updatedColumns = boardMock.getColumns();
+        assertEquals(playerDisk, updatedColumns.get(column).get(updatedColumns.get(column).size() - 1),
+                "Expected last position in column 0 to be YELLOW");
     }
 
     @Test
@@ -74,8 +86,17 @@ class MoveTest {
         int column = 1;
         Disk playerDisk = Disk.RED;
 
-        // When move is called on a full column
-        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> move.move(column, playerDisk));
+        // Mock a full column scenario
+        when(boardMock.getColumns()).thenReturn(Arrays.asList(
+                new ArrayList<>(Arrays.asList(Disk.RED, Disk.RED))  // Full column
+        ));
+
+        // When move is called on the full column
+        IllegalArgumentException exception = assertThrows(
+                IllegalArgumentException.class,
+                () -> move.move(column, playerDisk),
+                "Expected move to throw exception for full column"
+        );
 
         // Then an IllegalArgumentException should be thrown with a specific message
         assertEquals("That column is full", exception.getMessage());
@@ -90,6 +111,6 @@ class MoveTest {
 
         // Then the result should match the expected formatted string
         String expected = "EMPTY EMPTY \nRED EMPTY \n";
-        assertEquals(expected, boardString);
+        assertEquals(expected, boardString, "Expected formatted board string to match");
     }
 }

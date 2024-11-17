@@ -13,17 +13,20 @@ public class GameBoardGenerator {
 
     }
 
-    public Board generateBoard(int column,int row) {
+    public Board generateBoard(int column, int row) {
         List<List<Disk>> boardColumns = new ArrayList<>();
-        List<Disk> disks = new ArrayList<>();
-        for(int j = 0; j < row; j++) {
-            disks.add(Disk.EMPTY);
+
+        // Create a new list for each column
+        for (int i = 0; i < column; i++) {
+            List<Disk> columnDisks = new ArrayList<>();
+            for (int j = 0; j < row; j++) {
+                columnDisks.add(Disk.EMPTY);
+            }
+            boardColumns.add(columnDisks);
         }
-        for(int i = 0; i<column;i++) {
-            boardColumns.add(disks);
-        }
-        Board board = new Board(boardColumns,row);
-        //generate rows, generate columns
-        return board;
+
+        return new Board(boardColumns, row);
     }
+
+
 }
