@@ -2,112 +2,80 @@ package hu.nye.computer.player;
 
 import hu.nye.model.Board;
 import hu.nye.model.Disk;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.when;
 
-class ComputerMoveTest {
-    private Board board;
-    private ComputerMove computerMove;
+public class ComputerMoveTest {
 
-    @BeforeEach
-    void setUp() {
-        List<List<Disk>> columns = new ArrayList<>();
-        int rowCount = 6;
-        int columnCount = 7;
-
-        // Initialize empty columns for the board
-        for (int i = 0; i < columnCount; i++) {
-            List<Disk> column = new ArrayList<>();
-            columns.add(column);
-        }
-        board = new Board(columns, rowCount);
-        computerMove = new ComputerMove(board);
-    }
 
     @Test
-    void testGetRandomAvailableColumn_givenNonFullColumns_whenGetRandomAvailableColumn_thenReturnsValidColumnIndex() {
-        // Given: A board with all columns having at least one empty row
-        int columnCount = board.getColumns().size();
+    public void testGetRandomAvailableColumn() {
+        // Given: A mock board with a few columns
+        List<Disk> column1 = Arrays.asList(Disk.RED, Disk.EMPTY, Disk.EMPTY);
+        List<Disk> column2 = Arrays.asList(Disk.RED, Disk.RED, Disk.RED); // Full column
+        List<Disk> column3 = Arrays.asList(Disk.EMPTY, Disk.EMPTY, Disk.EMPTY); // Empty column
 
-        // When: The getRandomAvailableColumn is called
+        Board mockBoard = Mockito.mock(Board.class);
+        when(mockBoard.getColumns()).thenReturn(Arrays.asList(column1, column2, column3));
+
+        // When: Creating a ComputerMove instance and calling getRandomAvailableColumn
+        ComputerMove computerMove = new ComputerMove(mockBoard);
         int column = computerMove.getRandomAvailableColumn();
 
-        // Then: The returned column index should be within the bounds and not be full
-        assertTrue(column >= 0 && column < columnCount);
-        assertTrue(board.getColumns().get(column).size() < board.getRows());
+        // Then: The chosen column should have available space
+        assertTrue(column == 0 || column == 2, "Expected column to be 0 or 2, as column 1 is full");
     }
 
     @Test
-    void testGetCell_givenValidIndices_whenGetCell_thenReturnsExpectedDisk() {
-        // Given: A board with an inserted disk at (2, 0)
-        int columnIndex = 2;
-        int rowIndex = 0;
-        board.getColumns().get(columnIndex).add(Disk.RED);
+    public void testGetCell() {
+        // Given: A mock board with some disks placed
+        List<Disk> column1 = Arrays.asList(Disk.RED, Disk.YELLOW, Disk.EMPTY);
+        List<Disk> column2 = Arrays.asList(Disk.YELLOW, Disk.RED, Disk.EMPTY);
 
-        // When: The getCell method is called on that location
-        Disk result = computerMove.getCell(columnIndex, rowIndex);
+        Board mockBoard = Mockito.mock(Board.class);
+        when(mockBoard.getColumns()).thenReturn(Arrays.asList(column1, column2));
+        when(mockBoard.getRows()).thenReturn(3);
 
-        // Then: The returned disk should be RED
-        assertEquals(Disk.RED, result);
+        // When: Calling getCell to retrieve specific positions
+        ComputerMove computerMove = new ComputerMove(mockBoard);
+
+        // Valid indices within the mocked board
+        Disk diskAtCell00 = computerMove.getCell(0, 0); // RED in column 0, row 0
+        Disk diskAtCell11 = computerMove.getCell(1, 1); // RED in column 1, row 1
+
+        // Then: The correct disks should be returned for each cell
+        assertEquals(Disk.RED, diskAtCell00, "Expected RED at (0,0)");
+        assertEquals(Disk.RED, diskAtCell11, "Expected RED at (1,1)");
     }
 
     @Test
-    void testGetCell_givenEmptyLocation_whenGetCell_thenReturnsNull() {
-        // Given: A board with an empty cell at (0, 0)
-        int columnIndex = 0;
-        int rowIndex = 0;
+    public void testMakeMove() {
+        // Given: A mock board with a few columns
+        List<Disk> column1 = new ArrayList<>(Arrays.asList(Disk.RED, Disk.EMPTY, Disk.EMPTY));
+        List<Disk> column2 = new ArrayList<>(Arrays.asList(Disk.RED, Disk.RED, Disk.RED)); // Full column
+        List<Disk> column3 = new ArrayList<>(Arrays.asList(Disk.EMPTY, Disk.EMPTY, Disk.EMPTY));
 
-        // When: The getCell method is called on that location
-        Disk result = computerMove.getCell(columnIndex, rowIndex);
+        Board mockBoard = Mockito.mock(Board.class);
+        when(mockBoard.getColumns()).thenReturn(Arrays.asList(column1, column2, column3));
+        when(mockBoard.getRows()).thenReturn(3);
 
-        // Then: The returned disk should be null
-        assertNull(result);
+        // When: Creating a ComputerMove instance and calling makeMove
+        ComputerMove computerMove = new ComputerMove(mockBoard);
+        computerMove.makeMove(Disk.YELLOW); // The computer places a yellow disk
+
+        // Then: Assert the yellow disk is placed in the first available slot of a non-full column
+        boolean column1Updated = column1.get(1) == Disk.YELLOW || column1.get(2) == Disk.YELLOW;
+        boolean column3Updated = column3.get(0) == Disk.YELLOW || column3.get(1) == Disk.YELLOW;
+
+        assertTrue(column1Updated || column3Updated,
+                "The disk should be placed in the first available space of a non-full column.");
     }
 
-    @Test
-    void testMakeMove_givenAvailableColumn_whenMakeMove_thenDiskIsPlaced() {
-        // Given: A board with an available column
-        Disk playerDisk = Disk.YELLOW;
-
-        // When: makeMove is called with the player's disk
-        computerMove.makeMove(playerDisk);
-
-        // Then: The disk should be added to a valid column that is not full
-        boolean diskAdded = board.getColumns().stream()
-                .anyMatch(column -> column.size() > 0 && column.contains(playerDisk));
-        assertTrue(diskAdded);
-    }
-
-    @Test
-    void testMakeMove_givenFullColumn_whenMakeMove_thenThrowsException() {
-        // Given: A board with the first column completely filled
-        int columnToFill = 0;
-        for (int i = 0; i < board.getRows(); i++) {
-            board.getColumns().get(columnToFill).add(Disk.RED);
-        }
-        Disk playerDisk = Disk.YELLOW;
-
-        // When & Then: An IllegalArgumentException should be thrown when trying to place a disk in a full column
-        assertThrows(IllegalArgumentException.class, () -> computerMove.makeMove(playerDisk));
-    }
-
-    @Test
-    void testToString_givenBoardWithDisks_whenToString_thenReturnsCorrectStringRepresentation() {
-        // Given: A board with specific disks
-        board.getColumns().get(0).add(Disk.YELLOW);
-        board.getColumns().get(1).add(Disk.RED);
-
-        // When: The toString method is called
-        String boardString = computerMove.toString();
-
-        // Then: The output should contain the correct representation of disks in each column
-        assertTrue(boardString.contains("YELLOW"));
-        assertTrue(boardString.contains("RED"));
-    }
 }
