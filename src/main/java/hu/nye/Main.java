@@ -1,5 +1,8 @@
     package hu.nye;
 
+
+    import hu.nye.database.DatabaseManager;
+    import hu.nye.database.HighScoreService;
     import hu.nye.model.Board;
     import hu.nye.model.Disk;
     import hu.nye.board.BoardWriter;
@@ -27,6 +30,8 @@
             System.out.println(humanPlayer);
             ComputerMove computerPlayer = new ComputerMove(board);
             Move moveService = new Move(board);
+            DatabaseManager databaseManager = new DatabaseManager();
+            HighScoreService highScoreService = new HighScoreService(databaseManager);
 
             boolean gameOn = true;
             Disk currentPlayerDisk = Disk.YELLOW;  // Start with the human player
@@ -66,6 +71,7 @@
                         // Check for win or draw
                         if (checkWin.checkWin(column, board.getColumns().get(column).size() - 1, Disk.RED)) {
                             System.out.println("Computer wins!");
+
                             gameOn = false;
                         }
                     } catch (IllegalArgumentException e) {
@@ -77,12 +83,17 @@
                 // Check for draw
                 if (checkWin.checkDraw()) {
                     System.out.println("It's a draw!");
+                    highScoreService.savePlayerWin(humanPlayer.getPlayerName());
                     gameOn = false;
                 }
 
                 // Switch player
                 currentPlayerDisk = (currentPlayerDisk == Disk.YELLOW) ? Disk.RED : Disk.YELLOW;
+
+
             }
+            highScoreService.printHighScores();
+
         }
     }
 

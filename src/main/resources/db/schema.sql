@@ -1,0 +1,8 @@
+CREATE DATABASE game;
+USE game;
+
+CREATE TABLE high_scores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    player_name VARCHAR(255) NOT NULL UNIQUE,
+    wins INT DEFAULT 0
+);

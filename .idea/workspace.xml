@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e5d4d89a-39db-4f27-91d7-220dc988cb99" name="Changes" comment="Overriding and some changes have been done.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/hu/nye/board/BoardWriterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hu/nye/board/BoardWriterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/hu/nye/computer/player/ComputerMoveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hu/nye/computer/player/ComputerMoveTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/nye/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/nye/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/hu/nye/game/MoveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hu/nye/game/MoveTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +20,8 @@
       <list>
         <option value="Enum" />
         <option value="JUnit3 Test Class" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -54,7 +54,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
-    "JUnit.All in connectFourAlphaVersion.executor": "Coverage",
+    "JUnit.All in connectFourAlphaVersion.executor": "Run",
     "JUnit.BoardWriterTest.executor": "Coverage",
     "JUnit.ComputerMoveTest.executor": "Coverage",
     "JUnit.ConsoleInputProviderTest.executor": "Coverage",
@@ -66,6 +66,7 @@
     "Maven.connectFourAlphaVersion [install].executor": "Run",
     "Maven.connectFourAlphaVersion [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
     "Maven.connectFourAlphaVersion [org.apache.maven.plugins:maven-install-plugin:3.1.1:help].executor": "Run",
+    "Maven.connectFourAlphaVersion [org.apache.maven.plugins:maven-install-plugin:3.1.1:install].executor": "Run",
     "Maven.connectFourAlphaVersion [org.apache.maven.plugins:maven-jar-plugin:3.3.0:jar].executor": "Run",
     "Maven.connectFourAlphaVersion [org.jacoco:jacoco-maven-plugin:0.8.12:check].executor": "Run",
     "Maven.connectFourAlphaVersion [org.jacoco:jacoco-maven-plugin:0.8.12:dump].executor": "Run",
@@ -87,7 +88,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers": "true",
     "git-widget-placeholder": "assignment",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Java programok/Progtech/connectFourAlphaVersion",
+    "last_opened_file_path": "C:/Users/user/OneDrive/Asztali gép/RFT-Assignment-Dobos-Mil-n-Imre",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -116,7 +117,20 @@
       <recent name="model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ComputerMoveTest">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hu.nye.Main" />
+      <module name="connectFourAlphaVersion" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hu.nye.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="All in connectFourAlphaVersion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="connectFourAlphaVersion" />
       <option name="PACKAGE_NAME" value="" />
@@ -155,21 +169,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConsoleInputProviderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="connectFourAlphaVersion" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="hu.nye.player.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="hu.nye.player" />
-      <option name="MAIN_CLASS_NAME" value="hu.nye.player.ConsoleInputProviderTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="PlayerNameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="connectFourAlphaVersion" />
       <extension name="coverage">
@@ -186,19 +185,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.ComputerMoveTest" />
       <item itemvalue="JUnit.BoardWriterTest" />
-      <item itemvalue="JUnit.ConsoleInputProviderTest" />
       <item itemvalue="JUnit.PlayerNameTest" />
       <item itemvalue="JUnit.All in connectFourAlphaVersion" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.All in connectFourAlphaVersion" />
         <item itemvalue="JUnit.ComputerMoveTest" />
         <item itemvalue="JUnit.BoardWriterTest" />
         <item itemvalue="JUnit.PlayerNameTest" />
-        <item itemvalue="JUnit.ConsoleInputProviderTest" />
-        <item itemvalue="JUnit.All in connectFourAlphaVersion" />
       </list>
     </recent_temporary>
   </component>
@@ -403,7 +402,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731867017799</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Overriding and some changes have been done.">
+      <option name="closed" value="true" />
+      <created>1731914484522</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1731914484522</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Overriding and some changes have been done.">
+      <option name="closed" value="true" />
+      <created>1731914512084</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1731914512084</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -440,6 +455,6 @@
     <SUITE FILE_PATH="coverage/connectFourAlphaVersion$BoardWriterTest.ic" NAME="BoardWriterTest Coverage Results" MODIFIED="1731869133971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>hu.nye.board.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/connectFourAlphaVersion$All_in_connectFourAlphaVersion.ic" NAME="All in connectFourAlphaVersion Coverage Results" MODIFIED="1731868876142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/connectFourAlphaVersion$All_in_connectFourAlphaVersion.ic" NAME="All in connectFourAlphaVersion Coverage Results" MODIFIED="1731915201939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
