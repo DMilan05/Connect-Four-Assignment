@@ -27,6 +27,21 @@ public class HighScoreService {
             e.printStackTrace();
         }
     }
+    public void saveComputerPlayerWin(String computerName) {
+        String query = "INSERT INTO high_scores (player_name, wins) VALUES (?, 1) " +
+                "ON DUPLICATE KEY UPDATE wins = wins + 1";
+
+        try (Connection connection = databaseManager.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query)) {
+            System.out.println("Saving win for computer: " + computerName);
+            statement.setString(1, computerName);
+            int rowsAffected = statement.executeUpdate();
+            System.out.println("Rows affected: " + rowsAffected);
+        } catch (SQLException e) {
+            System.out.println("Error saving computer win: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
 
 
     public void printHighScores() {

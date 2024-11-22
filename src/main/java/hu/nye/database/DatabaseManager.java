@@ -12,4 +12,5 @@ public class DatabaseManager {
     public Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
+    //mysql -u root -p
 }

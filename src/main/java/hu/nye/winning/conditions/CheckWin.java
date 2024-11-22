@@ -18,10 +18,10 @@ public class CheckWin {
 
     // Access a specific cell in the board and handle out-of-bounds
     private Disk getCell(int x, int y) {
-        if (x >= 0 && x < columns.size() && y >= 0 && y < rows) {
+        if (x >= 0 && x < columns.size() && y >= 0 && y < columns.get(x).size()) {
             return columns.get(x).get(y); // Retrieve disk at column x, row y
         }
-        return Disk.EMPTY; // Return EMPTY if out of bounds
+        return Disk.EMPTY; // Return EMPTY if out of bounds or column is shorter
     }
 
     private boolean checkLine(int xStart, int yStart, int xDir, int yDir, Disk player) {
@@ -29,13 +29,14 @@ public class CheckWin {
             int x = xStart + xDir * i;
             int y = yStart + yDir * i;
 
-            if (x < 0 || x >= columns.size() || y < 0 || y >= rows) {
-                return false; // Out of bounds
+            // Validate bounds and ensure the cell matches the player
+            if (x < 0 || x >= columns.size() || y < 0 || y >= rows || y >= columns.get(x).size()) {
+                return false; // Out of bounds or invalid column height
             }
 
             Disk cell = getCell(x, y);
-            if (cell == null || cell != player) { // Use direct comparison
-                return false; // Stop if we encounter a different disk
+            if (cell != player) {
+                return false; // Different disk found
             }
         }
         return true;
@@ -43,8 +44,10 @@ public class CheckWin {
 
     // Checks all directions from a given point for a win
     public boolean checkWin(int x, int y, Disk player) {
-        // Vertical (downwards from current position)
-        if (checkLine(x, y, 0, -1, player)) {
+        System.out.println("Checking win at (" + x + ", " + y + ") for player: " + player);
+
+        // Vertical (downwards from the current position)
+        if (checkLine(x, y - 3, 0, 1, player)) { // Adjusted to check all downward possibilities
             return true;
         }
 

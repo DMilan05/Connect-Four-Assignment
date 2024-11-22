@@ -54,6 +54,7 @@
                         // Check for win or draw
                         if (checkWin.checkWin(column, board.getColumns().get(column).size() - 1, Disk.YELLOW)) {
                             System.out.println(humanPlayer.getPlayerName() + " wins!");
+                            highScoreService.savePlayerWin(humanPlayer.getPlayerName());
                             gameOn = false;
                         }
                     } catch (IllegalArgumentException e) {
@@ -71,7 +72,7 @@
                         // Check for win or draw
                         if (checkWin.checkWin(column, board.getColumns().get(column).size() - 1, Disk.RED)) {
                             System.out.println("Computer wins!");
-
+                            highScoreService.saveComputerPlayerWin("Computer");
                             gameOn = false;
                         }
                     } catch (IllegalArgumentException e) {
@@ -83,7 +84,6 @@
                 // Check for draw
                 if (checkWin.checkDraw()) {
                     System.out.println("It's a draw!");
-                    highScoreService.savePlayerWin(humanPlayer.getPlayerName());
                     gameOn = false;
                 }
 
