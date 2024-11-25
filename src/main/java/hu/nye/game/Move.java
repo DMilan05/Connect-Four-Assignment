@@ -13,8 +13,23 @@ public class Move{
     }
 
     public Disk getCell(int x, int y) {
-        assert(x >= 0 && x < board.getColumns().size()): "Invalid column index: " + x;
+        /*assert(x >= 0 && x < board.getColumns().size()): "Invalid column index: " + x;
         assert(y >= 0 && y < board.getRows()): "Invalid row index: " + y;
+
+        List<Disk> column = board.getColumns().get(x);
+
+        if (column.size() > y) {
+            return column.get(y);
+        } else {
+            return null;
+        }*/
+        if (x < 0 || x >= board.getColumns().size()) {
+            return null;
+        }
+        // Validate row index
+        if (y < 0 || y >= board.getRows()) {
+            return null;
+        }
 
         List<Disk> column = board.getColumns().get(x);
 

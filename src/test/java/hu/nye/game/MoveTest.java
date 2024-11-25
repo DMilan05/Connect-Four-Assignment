@@ -42,6 +42,8 @@ class MoveTest {
 
     @Test
     void testGetCell_shouldReturnNullForOutOfBounds() {
+        /*Disk result = move.getCell(0, 2); // Column 2 doesn't exist
+        assertNull(result, "Expected null for out-of-bounds cell");*/
         Disk result = move.getCell(0, 2); // Column 2 doesn't exist
         assertNull(result, "Expected null for out-of-bounds cell");
     }

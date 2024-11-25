@@ -6,76 +6,93 @@ import hu.nye.model.Disk;
 import java.util.List;
 
 public class CheckWin {
-    private final Board board;
-    private final List<List<Disk>> columns;
-    private final int rows;
 
-    public CheckWin(Board board) {
-        this.board = board;
-        this.columns = board.getColumns();
-        this.rows = board.getRows();
+    private static final int WIN_COUNT = 4;
+
+    public boolean checkWin(Board board, Disk disk) {
+        return checkHorizontal(board, disk) ||
+                checkVertical(board, disk) ||
+                checkDiagonalTopLeftToBottomRight(board, disk) ||
+                checkDiagonalBottomLeftToTopRight(board, disk);
     }
 
-    // Access a specific cell in the board and handle out-of-bounds
-    private Disk getCell(int x, int y) {
-        if (x >= 0 && x < columns.size() && y >= 0 && y < columns.get(x).size()) {
-            return columns.get(x).get(y); // Retrieve disk at column x, row y
-        }
-        return Disk.EMPTY; // Return EMPTY if out of bounds or column is shorter
-    }
-
-    private boolean checkLine(int xStart, int yStart, int xDir, int yDir, Disk player) {
-        for (int i = 0; i < 4; ++i) {
-            int x = xStart + xDir * i;
-            int y = yStart + yDir * i;
-
-            // Validate bounds and ensure the cell matches the player
-            if (x < 0 || x >= columns.size() || y < 0 || y >= rows || y >= columns.get(x).size()) {
-                return false; // Out of bounds or invalid column height
-            }
-
-            Disk cell = getCell(x, y);
-            if (cell != player) {
-                return false; // Different disk found
-            }
-        }
-        return true;
-    }
-
-    // Checks all directions from a given point for a win
-    public boolean checkWin(int x, int y, Disk player) {
-        System.out.println("Checking win at (" + x + ", " + y + ") for player: " + player);
-
-        // Vertical (downwards from the current position)
-        if (checkLine(x, y - 3, 0, 1, player)) { // Adjusted to check all downward possibilities
-            return true;
-        }
-
-        // Check horizontal and both diagonal lines
-        for (int offset = 0; offset < 4; ++offset) {
-            // Horizontal
-            if (checkLine(x - 3 + offset, y, 1, 0, player)) {
-                return true;
-            }
-            // Leading diagonal (top-left to bottom-right)
-            if (checkLine(x - 3 + offset, y + 3 - offset, 1, -1, player)) {
-                return true;
-            }
-            // Trailing diagonal (bottom-left to top-right)
-            if (checkLine(x - 3 + offset, y - 3 + offset, 1, 1, player)) {
-                return true;
+    private boolean checkHorizontal(Board board, Disk disk) {
+        for (List<Disk> column : board.getColumns()) {
+            for (int row = 0; row < board.getRows(); row++) {
+                int count = 0;
+                for (int col = 0; col < board.getColumns().size(); col++) {
+                    if (board.getColumns().get(col).get(row) == disk) {
+                        count++;
+                        if (count == WIN_COUNT) {
+                            return true;
+                        }
+                    } else {
+                        count = 0;
+                    }
+                }
             }
         }
         return false;
     }
 
-    // Check for a draw (no empty slots left and no winner)
-    public boolean checkDraw() {
-        for (List<Disk> column : columns) {
-            if (column.contains(Disk.EMPTY)) {
-                return false; // If any cell is empty, it's not a draw
+    private boolean checkVertical(Board board, Disk disk) {
+        for (int col = 0; col < board.getColumns().size(); col++) {
+            int count = 0;
+            for (int row = 0; row < board.getRows(); row++) {
+                if (board.getColumns().get(col).get(row) == disk) {
+                    count++;
+                    if (count == WIN_COUNT) {
+                        return true;
+                    }
+                } else {
+                    count = 0;
+                }
             }
         }
-        return true; // No empty cells left
+        return false;
+    }
+
+    private boolean checkDiagonalTopLeftToBottomRight(Board board, Disk disk) {
+        int columns = board.getColumns().size();
+        int rows = board.getRows();
+
+        for (int startCol = 0; startCol <= columns - WIN_COUNT; startCol++) {
+            for (int startRow = 0; startRow <= rows - WIN_COUNT; startRow++) {
+                int count = 0;
+                for (int offset = 0; offset < WIN_COUNT; offset++) {
+                    if (board.getColumns().get(startCol + offset).get(startRow + offset) == disk) {
+                        count++;
+                        if (count == WIN_COUNT) {
+                            return true;
+                        }
+                    } else {
+                        break;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    private boolean checkDiagonalBottomLeftToTopRight(Board board, Disk disk) {
+        int columns = board.getColumns().size();
+        int rows = board.getRows();
+
+        for (int startCol = 0; startCol <= columns - WIN_COUNT; startCol++) {
+            for (int startRow = WIN_COUNT - 1; startRow < rows; startRow++) {
+                int count = 0;
+                for (int offset = 0; offset < WIN_COUNT; offset++) {
+                    if (board.getColumns().get(startCol + offset).get(startRow - offset) == disk) {
+                        count++;
+                        if (count == WIN_COUNT) {
+                            return true;
+                        }
+                    } else {
+                        break;
+                    }
+                }
+            }
+        }
+        return false;
     }
 }

@@ -23,7 +23,7 @@
             GameBoardGenerator generator = new GameBoardGenerator();
             Board board = generator.generateBoard(7, 6);
             BoardWriter boardWriter = new BoardWriter(board);
-            CheckWin checkWin = new CheckWin(board);
+            CheckWin checkWin = new CheckWin();
             InputProvider inputProvider = new ConsoleInputProvider();
             PlayerName humanPlayer = new PlayerName("", inputProvider);
             humanPlayer = humanPlayer.askForPlayerName();
@@ -52,7 +52,12 @@
                         boardWriter.writeOut();
 
                         // Check for win or draw
-                        if (checkWin.checkWin(column, board.getColumns().get(column).size() - 1, Disk.YELLOW)) {
+                        /*if (checkWin.checkWin(column, board.getColumns().get(column).size() - 1, Disk.YELLOW)) {
+                            System.out.println(humanPlayer.getPlayerName() + " wins!");
+                            highScoreService.savePlayerWin(humanPlayer.getPlayerName());
+                            gameOn = false;
+                        }*/
+                        if (checkWin.checkWin(board, currentPlayerDisk)) {
                             System.out.println(humanPlayer.getPlayerName() + " wins!");
                             highScoreService.savePlayerWin(humanPlayer.getPlayerName());
                             gameOn = false;
@@ -70,7 +75,12 @@
                         boardWriter.writeOut();
 
                         // Check for win or draw
-                        if (checkWin.checkWin(column, board.getColumns().get(column).size() - 1, Disk.RED)) {
+                        /*if (checkWin.checkWin(column, board.getColumns().get(column).size() - 1, Disk.RED)) {
+                            System.out.println("Computer wins!");
+                            highScoreService.saveComputerPlayerWin("Computer");
+                            gameOn = false;
+                        }*/
+                        if (checkWin.checkWin(board, currentPlayerDisk)) {
                             System.out.println("Computer wins!");
                             highScoreService.saveComputerPlayerWin("Computer");
                             gameOn = false;
@@ -82,10 +92,10 @@
                 }
 
                 // Check for draw
-                if (checkWin.checkDraw()) {
+                /*if (checkWin.checkDraw()) {
                     System.out.println("It's a draw!");
                     gameOn = false;
-                }
+                }*/
 
                 // Switch player
                 currentPlayerDisk = (currentPlayerDisk == Disk.YELLOW) ? Disk.RED : Disk.YELLOW;
