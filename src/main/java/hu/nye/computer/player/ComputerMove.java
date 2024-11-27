@@ -3,6 +3,7 @@ package hu.nye.computer.player;
 import hu.nye.model.Board;
 import hu.nye.model.Disk;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -15,34 +16,32 @@ public class ComputerMove {
         this.random = new Random();
     }
 
-    /**
-     * Generates a random column index where a disk can be placed.
-     * Ensures the column is not already full.
-     *
-     * @return an available column index for placing a disk.
-     */
+    //Generates a random column and checks if there are any empty slots.
     public int getRandomAvailableColumn() {
-        int column;
-        do {
-            column = random.nextInt(board.getColumns().size());
-            List<Disk> columnDisks = board.getColumns().get(column);
+        List<List<Disk>> columns = board.getColumns();
+        List<Integer> availableColumns = new ArrayList<>();
 
-            // Check if the column has any empty slots
-            boolean hasEmpty = columnDisks.stream().anyMatch(disk -> disk == Disk.EMPTY);
-            if (hasEmpty) {
-                return column;
+        for (int i = 0; i < columns.size(); i++) {
+            List<Disk> column = columns.get(i);
+            if (column.contains(Disk.EMPTY)) {
+                availableColumns.add(i);
             }
-        } while (true);
+        }
+
+        if (availableColumns.isEmpty()) {
+            throw new IllegalStateException("No available columns to make a move");
+        }
+
+        Random random = new Random();
+        return availableColumns.get(random.nextInt(availableColumns.size()));
     }
 
+    /*column = random.nextInt(board.getColumns().size());
+            */
 
-    /**
-     * Retrieves the disk at the specified location on the board.
-     *
-     * @param x the column index
-     * @param y the row index
-     * @return the disk at the given location or null if the location is empty
-     */
+
+    //Retrieves the disk at the specified location on the board.
+    // x - column index, y - row index. null - empty
     public Disk getCell(int x, int y) {
         assert(x >= 0 && x < board.getColumns().size()) : "Invalid column index: " + x;
         assert(y >= 0 && y < board.getRows()) : "Invalid row index: " + y;
@@ -51,19 +50,28 @@ public class ComputerMove {
         return (column.size() > y) ? column.get(y) : null;
     }
 
-    /**
-     * Places a disk in a random available column.
-     *
-     * @param player the disk to place in the chosen column
-     */
-    public void makeMove(Disk player) {
-        int column = getRandomAvailableColumn();
 
-        List<Disk> columnDisks = board.getColumns().get(column);
-        for (int i = columnDisks.size() - 1; i >= 0; i--) {
-            if (columnDisks.get(i) == Disk.EMPTY) {
-                columnDisks.set(i, player); // Replace Disk.EMPTY with the computer's disk
+
+    //The computer makes a move with the random generated column.
+    /*public void makeMove(Disk disk) {
+        int columnIndex = getRandomAvailableColumn();
+        List<Disk> column = board.getColumns().get(columnIndex);
+
+        for (int i = column.size() - 1; i >= 0; i--) {
+            if (column.get(i) == Disk.EMPTY) {
+                column.set(i, disk);
                 return;
+            }
+        }
+
+        throw new IllegalStateException("No empty space found in the selected column");
+    }*/
+    public void makeMove(Disk disk) {
+        int column = getRandomAvailableColumn(); // Ensure this picks a valid column
+        for (int row = board.getRows() - 1; row >= 0; row--) {
+            if (board.getColumns().get(column).get(row) == Disk.EMPTY) {
+                board.getColumns().get(column).set(row, disk);
+                break;
             }
         }
     }

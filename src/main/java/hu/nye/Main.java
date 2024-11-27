@@ -50,13 +50,6 @@
                     try {
                         moveService.move(column, Disk.YELLOW);  // Human move
                         boardWriter.writeOut();
-
-                        // Check for win or draw
-                        /*if (checkWin.checkWin(column, board.getColumns().get(column).size() - 1, Disk.YELLOW)) {
-                            System.out.println(humanPlayer.getPlayerName() + " wins!");
-                            highScoreService.savePlayerWin(humanPlayer.getPlayerName());
-                            gameOn = false;
-                        }*/
                         if (checkWin.checkWin(board, currentPlayerDisk)) {
                             System.out.println(humanPlayer.getPlayerName() + " wins!");
                             highScoreService.savePlayerWin(humanPlayer.getPlayerName());
@@ -73,13 +66,6 @@
                     try {
                         moveService.move(column, Disk.RED);  // Computer move
                         boardWriter.writeOut();
-
-                        // Check for win or draw
-                        /*if (checkWin.checkWin(column, board.getColumns().get(column).size() - 1, Disk.RED)) {
-                            System.out.println("Computer wins!");
-                            highScoreService.saveComputerPlayerWin("Computer");
-                            gameOn = false;
-                        }*/
                         if (checkWin.checkWin(board, currentPlayerDisk)) {
                             System.out.println("Computer wins!");
                             highScoreService.saveComputerPlayerWin("Computer");
@@ -91,11 +77,10 @@
                     }
                 }
 
-                // Check for draw
-                /*if (checkWin.checkDraw()) {
-                    System.out.println("It's a draw!");
-                    gameOn = false;
-                }*/
+
+
+
+
 
                 // Switch player
                 currentPlayerDisk = (currentPlayerDisk == Disk.YELLOW) ? Disk.RED : Disk.YELLOW;

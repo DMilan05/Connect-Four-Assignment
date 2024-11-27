@@ -44,7 +44,7 @@ public class HighScoreService {
     }
 
 
-    public void printHighScores() {
+    /*public void printHighScores() {
         String query = "SELECT player_name, wins FROM high_scores ORDER BY wins DESC";
 
         try (Connection connection = databaseManager.getConnection();
@@ -68,5 +68,20 @@ public class HighScoreService {
             System.out.println("Error fetching high scores: " + e.getMessage());
             e.printStackTrace();
         }
+    }*/
+    public void printHighScores() {
+        try (Connection connection = databaseManager.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement("SELECT player_name, wins FROM high_scores");
+             ResultSet resultSet = preparedStatement.executeQuery()) {
+
+            while (resultSet.next()) {
+                String playerName = resultSet.getString("player_name");
+                int wins = resultSet.getInt("wins");
+                System.out.printf("%s: %d wins%n", playerName, wins);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); // Handle the exception
+        }
     }
+
 }

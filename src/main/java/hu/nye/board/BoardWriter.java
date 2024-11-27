@@ -20,8 +20,6 @@ public class BoardWriter {
         // Print the board state after every move
         System.out.println(this.toString());
     }
-
-
     //This Override was created by ChatGPT.
     @Override
     public String toString() {
@@ -47,9 +45,4 @@ public class BoardWriter {
 
         return sb.toString();
     }
-
-
-
-
-
 }

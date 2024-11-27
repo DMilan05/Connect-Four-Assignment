@@ -13,16 +13,6 @@ public class Move{
     }
 
     public Disk getCell(int x, int y) {
-        /*assert(x >= 0 && x < board.getColumns().size()): "Invalid column index: " + x;
-        assert(y >= 0 && y < board.getRows()): "Invalid row index: " + y;
-
-        List<Disk> column = board.getColumns().get(x);
-
-        if (column.size() > y) {
-            return column.get(y);
-        } else {
-            return null;
-        }*/
         if (x < 0 || x >= board.getColumns().size()) {
             return null;
         }
@@ -62,11 +52,6 @@ public class Move{
         }
     }
 
-
-
-
-
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,14 +63,4 @@ public class Move{
         }
         return sb.toString();
     }
-    //Nem a dokumentáció/kód részét képzik a következő sorok. Csak tanácsok az oktatótól.
-    //paraméterként adjuk be az adott metódusoknak, amelyek használják (ne örököltessük a GameBoardból, mivel
-    //ezek servicek, ne terjesszék ki (Move GameBoard-e? -> igen -> lehet)
-
-    //GameBoardGenerator -> service
-    //Move - VO
-
-    //Move ValueObject: mi a valid lépés, serviceként implementáljam
-    //minél kevesebb adat átadása paraméterként
-    //ha valami csak rowt használ, ne adjam át az egész objektumot, csak az instance rowját
 }
