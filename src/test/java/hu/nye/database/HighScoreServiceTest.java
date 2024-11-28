@@ -39,13 +39,6 @@ class HighScoreServiceTest {
     @BeforeEach
     void setUp() throws SQLException {
         MockitoAnnotations.openMocks(this);
-        /*when(databaseManager.getConnection()).thenReturn(connection);
-        when(connection.prepareStatement(any(String.class))).thenReturn(preparedStatement);
-        when(preparedStatement.executeQuery()).thenReturn(resultSet);
-        when(resultSet.next()).thenReturn(true).thenReturn(false); // First call: true, second: false
-        when(resultSet.getString("player_name")).thenReturn("Player1");
-        when(resultSet.getInt("wins")).thenReturn(5);*/
-
     }
 
     // GIVEN: A player with a valid name
@@ -163,5 +156,46 @@ class HighScoreServiceTest {
         verify(connection, times(1)).prepareStatement(query);
         // You can also verify error logging if applicable
     }
+    @Test
+    void givenSQLException_whenPrintHighScores_thenSQLExceptionIsHandled() throws SQLException {
+        // Arrange: Mock the database to throw an exception
+        when(databaseManager.getConnection()).thenThrow(new SQLException("Database connection error"));
+
+        ByteArrayOutputStream errContent = new ByteArrayOutputStream();
+        System.setErr(new PrintStream(errContent)); // Redirect System.err
+
+        // Act
+        highScoreService.printHighScores();
+
+        // Assert
+        assertTrue(
+                errContent.toString().contains("Database connection error"),
+                "Expected System.err to contain the SQLException message"
+        );
+
+        // Cleanup
+        System.setErr(System.err);
+    }
+    @Test
+    void givenSQLException_whenSavePlayerWin_thenSQLExceptionIsHandledAndStackTracePrinted() throws SQLException {
+        // Arrange: Mock the database to throw an exception
+        when(databaseManager.getConnection()).thenThrow(new SQLException("Error saving player win"));
+
+        ByteArrayOutputStream errContent = new ByteArrayOutputStream();
+        System.setErr(new PrintStream(errContent)); // Redirect System.err
+
+        // Act
+        highScoreService.savePlayerWin("Player1");
+
+        // Assert
+        assertTrue(
+                errContent.toString().contains("Error saving player win"),
+                "Expected System.err to contain the SQLException message"
+        );
+
+        // Cleanup
+        System.setErr(System.err);
+    }
+
 
 }

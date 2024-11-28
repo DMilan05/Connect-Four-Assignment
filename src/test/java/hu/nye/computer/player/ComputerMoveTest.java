@@ -32,6 +32,28 @@ public class ComputerMoveTest {
         // Then: The chosen column should have available space
         assertTrue(column == 0 || column == 2, "Expected column to be 0 or 2, as column 1 is full");
     }
+    @Test
+    void testGetRandomAvailableColumn_shouldThrowExceptionWhenNoColumnsAvailable() {
+        // Given: A mock board where all columns are full
+        List<Disk> column1 = Arrays.asList(Disk.RED, Disk.YELLOW, Disk.RED);
+        List<Disk> column2 = Arrays.asList(Disk.YELLOW, Disk.RED, Disk.YELLOW);
+        List<Disk> column3 = Arrays.asList(Disk.RED, Disk.YELLOW, Disk.RED);
+
+        Board mockBoard = Mockito.mock(Board.class);
+        when(mockBoard.getColumns()).thenReturn(Arrays.asList(column1, column2, column3));
+
+        // When: Creating a ComputerMove instance
+        ComputerMove computerMove = new ComputerMove(mockBoard);
+
+        // Then: Expect an IllegalStateException to be thrown
+        Exception exception = assertThrows(
+                IllegalStateException.class,
+                computerMove::getRandomAvailableColumn,
+                "Expected getRandomAvailableColumn to throw IllegalStateException when no columns are available"
+        );
+        assertEquals("No available columns to make a move", exception.getMessage());
+    }
+
 
     @Test
     public void testGetCell() {

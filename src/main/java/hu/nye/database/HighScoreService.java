@@ -43,32 +43,6 @@ public class HighScoreService {
         }
     }
 
-
-    /*public void printHighScores() {
-        String query = "SELECT player_name, wins FROM high_scores ORDER BY wins DESC";
-
-        try (Connection connection = databaseManager.getConnection();
-             PreparedStatement statement = connection.prepareStatement(query);
-             ResultSet resultSet = statement.executeQuery()) {
-
-            System.out.println("Fetching high scores...");
-            boolean hasResults = false;
-
-            while (resultSet.next()) {
-                hasResults = true;
-                String name = resultSet.getString("player_name");
-                int wins = resultSet.getInt("wins");
-                System.out.printf("%s: %d wins%n", name, wins);
-            }
-
-            if (!hasResults) {
-                System.out.println("No high scores found.");
-            }
-        } catch (SQLException e) {
-            System.out.println("Error fetching high scores: " + e.getMessage());
-            e.printStackTrace();
-        }
-    }*/
     public void printHighScores() {
         try (Connection connection = databaseManager.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement("SELECT player_name, wins FROM high_scores");

@@ -76,4 +76,43 @@ class PlayerNameTest {
         // Then it should return false
         assertEquals(false, isEqual);
     }
+
+    @Test
+    void testHashCode_shouldBeEqualForSameName() {
+        // Given two PlayerName objects with the same name
+        PlayerName anotherPlayer = new PlayerName("John", inputProviderMock);
+
+        // When hashCode is called
+        int hashCode1 = playerName.hashCode();
+        int hashCode2 = anotherPlayer.hashCode();
+
+        // Then their hashCodes should be equal
+        assertEquals(hashCode1, hashCode2, "Expected hashCodes to be equal for objects with the same name");
+    }
+
+    @Test
+    void testHashCode_shouldBeDifferentForDifferentNames() {
+        // Given two PlayerName objects with different names
+        PlayerName differentPlayer = new PlayerName("Alice", inputProviderMock);
+
+        // When hashCode is called
+        int hashCode1 = playerName.hashCode();
+        int hashCode2 = differentPlayer.hashCode();
+
+        // Then their hashCodes should be different
+        assertEquals(false, hashCode1 == hashCode2, "Expected hashCodes to be different for objects with different names");
+    }
+
+    @Test
+    void testHashCode_shouldBeConsistent() {
+        // Given a single PlayerName object
+
+        // When hashCode is called multiple times
+        int hashCode1 = playerName.hashCode();
+        int hashCode2 = playerName.hashCode();
+
+        // Then the hashCode should remain consistent
+        assertEquals(hashCode1, hashCode2, "Expected hashCode to remain consistent for the same object");
+    }
+
 }

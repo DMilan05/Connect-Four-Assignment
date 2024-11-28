@@ -36,10 +36,6 @@ public class ComputerMove {
         return availableColumns.get(random.nextInt(availableColumns.size()));
     }
 
-    /*column = random.nextInt(board.getColumns().size());
-            */
-
-
     //Retrieves the disk at the specified location on the board.
     // x - column index, y - row index. null - empty
     public Disk getCell(int x, int y) {
@@ -50,22 +46,7 @@ public class ComputerMove {
         return (column.size() > y) ? column.get(y) : null;
     }
 
-
-
     //The computer makes a move with the random generated column.
-    /*public void makeMove(Disk disk) {
-        int columnIndex = getRandomAvailableColumn();
-        List<Disk> column = board.getColumns().get(columnIndex);
-
-        for (int i = column.size() - 1; i >= 0; i--) {
-            if (column.get(i) == Disk.EMPTY) {
-                column.set(i, disk);
-                return;
-            }
-        }
-
-        throw new IllegalStateException("No empty space found in the selected column");
-    }*/
     public void makeMove(Disk disk) {
         int column = getRandomAvailableColumn(); // Ensure this picks a valid column
         for (int row = board.getRows() - 1; row >= 0; row--) {
