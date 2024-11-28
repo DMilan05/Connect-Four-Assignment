@@ -6,15 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e5d4d89a-39db-4f27-91d7-220dc988cb99" name="Changes" comment="The game (I think) has almost been fully made.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/nye/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/nye/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/nye/board/BoardWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/nye/board/BoardWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/nye/computer/player/ComputerMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/nye/computer/player/ComputerMove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/nye/database/HighScoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/nye/database/HighScoreService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/nye/game/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/nye/game/Move.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/hu/nye/computer/player/ComputerMoveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hu/nye/computer/player/ComputerMoveTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/hu/nye/player/ConsoleInputProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hu/nye/player/ConsoleInputProviderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/hu/nye/winning/conditions/CheckWinTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hu/nye/winning/conditions/CheckWinTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +118,7 @@
       <recent name="model" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.All in connectFourAlphaVersion">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="hu.nye.Main" />
       <module name="connectFourAlphaVersion" />
@@ -203,8 +195,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in connectFourAlphaVersion" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.ComputerMoveTest" />
         <item itemvalue="JUnit.HighScoreServiceTest" />
         <item itemvalue="JUnit.ComputerMoveTest.testMakeMove" />
@@ -452,7 +444,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732551493646</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="The game (I think) has almost been fully made.">
+      <option name="closed" value="true" />
+      <created>1732733399773</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1732733399773</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -490,6 +490,6 @@
     <SUITE FILE_PATH="coverage/connectFourAlphaVersion$BoardWriterTest.ic" NAME="BoardWriterTest Coverage Results" MODIFIED="1731869133971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>hu.nye.board.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/connectFourAlphaVersion$All_in_connectFourAlphaVersion.ic" NAME="All in connectFourAlphaVersion Coverage Results" MODIFIED="1732713404959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/connectFourAlphaVersion$All_in_connectFourAlphaVersion.ic" NAME="All in connectFourAlphaVersion Coverage Results" MODIFIED="1732806540542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
