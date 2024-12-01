@@ -24,5 +24,16 @@ public class Board {
     public int getRows() {
         return rows;
     }
+    public boolean isFull() {
+        for (List<Disk> column : columns) {
+            for (Disk disk : column) {
+                if (disk == Disk.EMPTY) {
+                    return false; // Ha találunk üres helyet, a tábla nem tele
+                }
+            }
+        }
+        return true; // Ha nem találunk üres helyet, a tábla tele van
+    }
+
 }
 

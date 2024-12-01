@@ -42,10 +42,19 @@ class MoveTest {
 
     @Test
     void testGetCell_shouldReturnNullForOutOfBounds() {
-        /*Disk result = move.getCell(0, 2); // Column 2 doesn't exist
-        assertNull(result, "Expected null for out-of-bounds cell");*/
-        Disk result = move.getCell(0, 2); // Column 2 doesn't exist
-        assertNull(result, "Expected null for out-of-bounds cell");
+        // Test for invalid column index
+        Disk result1 = move.getCell(-1, 0);
+        assertNull(result1, "Expected null for out-of-bounds column index (-1, 0)");
+
+        Disk result2 = move.getCell(2, 0);
+        assertNull(result2, "Expected null for out-of-bounds column index (2, 0)");
+
+        // Test for invalid row index
+        Disk result3 = move.getCell(0, -1);
+        assertNull(result3, "Expected null for out-of-bounds row index (0, -1)");
+
+        Disk result4 = move.getCell(0, 2);
+        assertNull(result4, "Expected null for out-of-bounds row index (0, 2)");
     }
 
     @Test
@@ -74,7 +83,7 @@ class MoveTest {
                 "Expected move to throw exception for full column"
         );
 
-        assertEquals("That column is full.", exception.getMessage()); // Updated to match the actual exception message
+        assertEquals("That column is full.", exception.getMessage());
     }
 
     @Test
@@ -88,7 +97,7 @@ class MoveTest {
                 "Expected move to throw exception for invalid column"
         );
 
-        assertEquals("Invalid column index.", exception.getMessage()); // Updated to match the actual exception message
+        assertEquals("Invalid column index.", exception.getMessage());
     }
 
     @Test
@@ -97,4 +106,13 @@ class MoveTest {
         String boardString = move.toString();
         assertEquals(expected, boardString, "Expected formatted board string to match");
     }
+    @Test
+    void testGetCell_shouldReturnNullWhenColumnSizeIsSmallerThanRowIndex() {
+        // Simulate a column that is shorter than the requested row index
+        columns.set(0, new ArrayList<>(Arrays.asList(Disk.EMPTY))); // Column 0 has only 1 row
+
+        Disk result = move.getCell(0, 1); // Requesting row 1 in column 0, which doesn't exist
+        assertNull(result, "Expected null when the column size is smaller than the requested row index");
+    }
+
 }

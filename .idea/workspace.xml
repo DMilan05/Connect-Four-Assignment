@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5d4d89a-39db-4f27-91d7-220dc988cb99" name="Changes" comment="ComputerMoveTest class has been updated. Right now I have 78% percent coverage (which is not very good still :( ).">
+    <list default="true" id="e5d4d89a-39db-4f27-91d7-220dc988cb99" name="Changes" comment="mvn clean test runs well. I have achieved 80% tests.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/nye/computer/player/ComputerMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/nye/computer/player/ComputerMove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/nye/database/HighScoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/nye/database/HighScoreService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/hu/nye/board/BoardWriterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hu/nye/board/BoardWriterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/hu/nye/computer/player/ComputerMoveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hu/nye/computer/player/ComputerMoveTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/hu/nye/database/HighScoreServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hu/nye/database/HighScoreServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/hu/nye/player/PlayerNameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hu/nye/player/PlayerNameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/nye/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/nye/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/nye/model/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/nye/model/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/hu/nye/game/MoveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hu/nye/game/MoveTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/hu/nye/model/BoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hu/nye/model/BoardTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -465,7 +464,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732806935497</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="mvn clean test runs well. I have achieved 80% tests.">
+      <option name="closed" value="true" />
+      <created>1732808668040</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1732808668040</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -486,7 +493,8 @@
     <MESSAGE value="Overriding and some changes have been done." />
     <MESSAGE value="The game (I think) has almost been fully made." />
     <MESSAGE value="ComputerMoveTest class has been updated. Right now I have 78% percent coverage (which is not very good still :( )." />
-    <option name="LAST_COMMIT_MESSAGE" value="ComputerMoveTest class has been updated. Right now I have 78% percent coverage (which is not very good still :( )." />
+    <MESSAGE value="mvn clean test runs well. I have achieved 80% tests." />
+    <option name="LAST_COMMIT_MESSAGE" value="mvn clean test runs well. I have achieved 80% tests." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/connectFourAlphaVersion$ConsoleInputProviderTest.ic" NAME="ConsoleInputProviderTest Coverage Results" MODIFIED="1731869079947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -504,6 +512,6 @@
     <SUITE FILE_PATH="coverage/connectFourAlphaVersion$BoardWriterTest.ic" NAME="BoardWriterTest Coverage Results" MODIFIED="1731869133971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>hu.nye.board.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/connectFourAlphaVersion$All_in_connectFourAlphaVersion.ic" NAME="All in connectFourAlphaVersion Coverage Results" MODIFIED="1732808249153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/connectFourAlphaVersion$All_in_connectFourAlphaVersion.ic" NAME="All in connectFourAlphaVersion Coverage Results" MODIFIED="1733060804668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
