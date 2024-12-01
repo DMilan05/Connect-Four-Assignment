@@ -13,6 +13,7 @@ public class Move{
     }
 
     public Disk getCell(int x, int y) {
+        // Validate column index
         if (x < 0 || x >= board.getColumns().size()) {
             return null;
         }

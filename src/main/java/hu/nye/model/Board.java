@@ -28,11 +28,11 @@ public class Board {
         for (List<Disk> column : columns) {
             for (Disk disk : column) {
                 if (disk == Disk.EMPTY) {
-                    return false; // Ha találunk üres helyet, a tábla nem tele
+                    return false; // If there is some empty place, then the board is not full.
                 }
             }
         }
-        return true; // Ha nem találunk üres helyet, a tábla tele van
+        return true; // If there is not any empty place, then the board is full.
     }
 
 }
